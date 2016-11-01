@@ -1,6 +1,6 @@
 # SharpReact
 #Notes
-  [Notes (文章/笔记)](/Documentation/notes.md)
+  [Notes (文章/笔记)](Documentation/notes.md)
 #Content
 
 #Screens
