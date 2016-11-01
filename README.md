@@ -1,6 +1,6 @@
 # SharpReact
 #Notes
-
+  [Notes (文章/笔记)](/Documentation/notes.md)
 #Content
 
 #Screens
@@ -20,6 +20,11 @@ A declarative, efficient, and flexible JavaScript library for building user inte
 Predictable state container for JavaScript apps;
 
 Redux 中文文档<http://cn.redux.js.org/>
+
+Redux 是 JavaScript 状态容器，提供可预测化的状态管理。
+可以让你构建一致化的应用，运行于不同的环境（客户端、服务器、原生应用），并且易于测试。不仅于此，它还提供 超爽的开发体验，比如有一个时间旅行调试器可以编辑后实时预览。
+Redux 除了和 React 一起用外，还支持其它界面库。
+它体小精悍（只有2kB）且没有任何依赖。
 ###[React-Redux](https://github.com/reactjs/react-redux )
 Official React bindings for Redux
 
