@@ -19,6 +19,7 @@ A declarative, efficient, and flexible JavaScript library for building user inte
 ###[Redux](https://github.com/reactjs/redux)
 Predictable state container for JavaScript apps;
 
+Redux 中文文档 <http://cn.redux.js.org/ >
 ###[React-Redux](https://github.com/reactjs/react-redux )
 Official React bindings for Redux
 
