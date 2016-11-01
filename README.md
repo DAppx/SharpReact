@@ -67,6 +67,8 @@ A window.fetch JavaScript polyfill. http://github.github.io/fetch/
 ##Universal Javascript
 ###[react-helmet](https://github.com/nfl/react-helmet)
 A document head manager for React
+###[Serialize JavaScript](https://github.com/yahoo/serialize-javascript)
+Serialize JavaScript to a superset of JSON that includes regular expressions and functions.
 
 ## UI/UX
 ###[Ant Design](https://ant.design/)
@@ -91,6 +93,12 @@ React Component 基础上精心封装的高质量 UI 组件。
 
 Documentation about css-modules
 css-modules: 配合 webpack 的 css-loader 进行打包，会为所有的 class name 和 animation name 加 local scope，避免潜在冲突。
+
+##Server
+
+###[Express](http://expressjs.com/)
+Fast, unopinionated, minimalist web framework for node. http://expressjs.com
+
 
 ##Testing
 

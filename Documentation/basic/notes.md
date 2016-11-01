@@ -23,9 +23,12 @@ A React table component designed to allow presenting thousands of rows of data
 ###[draft-js](https://github.com/facebook/draft-js)
 A React framework for building text editors. https://facebook.github.io/draft-js/
 
+###[material-ui](https://github.com/callemall/material-ui)
+React Components that Implement Google's Material Design;
 
 ##demo / starter / boilerplate
-
+###[react-redux-universal-hot-example ](https://github.com/erikras/react-redux-universal-hot-example)
+A starter boilerplate for a universal webapp using express, react, redux, webpack, and react-transform
 
 ###[judo-heroes](https://github.com/lmammino/judo-heroes)
 A React application to showcase rendering with Universal JavaScript
