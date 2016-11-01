@@ -11,12 +11,18 @@ RxJS middleware for action side effects in Redux using "Epics" <https://redux-ob
 Immutable persistent data collections for Javascript which increase efficiency and simplicity. http://facebook.github.io/immutable-js/
 
 ##Articles  文章
+
+###[awesome-react](https://github.com/enaqx/awesome-react)
+A collection of awesome things regarding React ecosystem.
+  相关的资源列表（React生态圈）
 ###[React 设计思想](https://github.com/react-guide/react-basic)
 
 ###[ducks](https://github.com/erikras/ducks-modular-redux)
 A proposal for bundling reducers, action types and actions when using Redux
 
   Ducks: Redux Reducer Bundles
+
+
 ##UI/UX
 ###[fixed-data-table](https://github.com/facebook/fixed-data-table)
 A React table component designed to allow presenting thousands of rows of data
