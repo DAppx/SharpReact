@@ -10,7 +10,7 @@ RxJS middleware for action side effects in Redux using "Epics" <https://redux-ob
 
 Immutable persistent data collections for Javascript which increase efficiency and simplicity. http://facebook.github.io/immutable-js/
 
- ##Articles  文章
+##Articles  文章
 ###[React 设计思想](https://github.com/react-guide/react-basic)
 
 ###[ducks](https://github.com/erikras/ducks-modular-redux)
