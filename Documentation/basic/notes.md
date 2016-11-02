@@ -12,6 +12,7 @@ Immutable persistent data collections for Javascript which increase efficiency a
 
 ##Articles  文章
 
+
 ###[awesome-react](https://github.com/enaqx/awesome-react)
 A collection of awesome things regarding React ecosystem.
   相关的资源列表（React生态圈）
@@ -21,8 +22,12 @@ A collection of awesome things regarding React ecosystem.
 A proposal for bundling reducers, action types and actions when using Redux
 
   Ducks: Redux Reducer Bundles
+###[GUI应用程序架构的十年变迁:MVC,MVP,MVVM,Unidirectional,Clean ](http://www.cnblogs.com/gujf2016/p/5780086.html)
 
+###[dva-docs](https://github.com/dvajs/dva-docs)
+The dva docs.
 
+快速上手，基本概念 ，教程
 ##UI/UX
 ###[fixed-data-table](https://github.com/facebook/fixed-data-table)
 A React table component designed to allow presenting thousands of rows of data
