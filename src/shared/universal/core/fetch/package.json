@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "name": "fetch",
+  "main": "../../../node/core/fetch/fetch.server.js",
+  "browser": "./fetch.client.js"
+}

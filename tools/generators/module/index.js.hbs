@@ -1,0 +1,27 @@
+/*
+ *
+ * {{properCase name }}
+ *
+ */
+
+{{#if wantActionsAndReducer}}
+import * as actions from './actions';
+import reducer from './reducer';
+{{/if}}
+{{#if wantSagas}}
+import sagas from './sagas';
+import * as selectors from './selectors';
+{{/if}}
+import Page from './homePage';
+
+export default {
+{{#if wantActionsAndReducer}}
+    actions,
+    reducer,
+{{/if}}
+{{#if wantSagas}}
+    sagas,
+    selectors,
+{{/if}}
+    Page
+    };

@@ -1,0 +1,41 @@
+/*
+*
+* {{ properCase name }} Router Render
+*
+*/
+
+import React from 'react';
+import {Match, Miss} from 'react-router';
+import {CodeSplit} from 'code-split-component';
+import {getAsyncInjectors} from '../../utils/asyncInjectors';
+
+const MatchWith{{ properCase name }} = ({store, ...rest}) => {
+  return (
+    <Match {{curly true}}...rest{{curly}} render={{curly true}}{{ camelCase name }}RouterRender(store){{curly}}/>
+    )
+};
+const {{ camelCase name }}RouterRender = (store) => {
+  const {injectReducer, injectSagas} = getAsyncInjectors(store);
+  return function (routerProps) {
+    return (
+      <CodeSplit chunkName="{{ camelCase name }}" modules={{curly true}}
+        {{curly true}}
+           modules: require('../{{ properCase name }}')
+       }
+      }>
+      { ({ modules }) => {
+      if (!modules) return <div />;
+      const {Page}= modules;
+      injectReducer('{{ camelCase name }}', modules.reducer);
+      injectSagas(modules.sagas);
+      return Page && <Page {...routerProps} />
+       } }
+     </CodeSplit>
+    )
+  }
+};
+
+export default MatchWith{{ properCase name }};
+
+
+
