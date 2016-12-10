@@ -10,13 +10,13 @@ import {CodeSplit} from 'code-split-component';
 //import 'normalize.css/normalize.css';
 import {getAsyncInjectors} from '../utils/asyncInjectors';
 import storeShape from '../utils/storeShape'
-import './globals.css';
+//import './globals.css';
 import Error404 from './Error404';
 import Header from './Header';
+import CoreLayout from './CoreLayout';
+import AppRouter from './AppStartRouter';
 import MatchWithUser from '../modules/github/router'
 import MatchWithTest from '../modules/Test/router'
-//import UserPage1 from './UserPage';
-//import Example from './Example';
 import {WEBSITE_TITLE, WEBSITE_DESCRIPTION} from '../constants';
 
 //define router render function
@@ -109,113 +109,84 @@ class App extends Component {
           script={[]}
         />
 
-        <Header />
-
-        <Match
-          exactly
-          pattern="/"
-          render={routerProps =>
-            <CodeSplit chunkName="home" modules={{Home: require('./Home')}}>
-              { ({Home}) => Home && <Home {...routerProps} /> }
-            </CodeSplit>
-          }
-        />
-        <Match
-          pattern="/about"
-          render={routerProps =>
-            <CodeSplit chunkName="about" modules={{About: require('./About')}}>
-              { ({About}) => {
-                if (!About) return <div />;
-                return About && <About {...routerProps} /> }}
-            </CodeSplit>
-          }
-        />
-        <Match
-          exactly
-          pattern="/example"
-          render={routerProps =>
-            <CodeSplit chunkName="example" modules={
-            {
-              Example: require('./Example'),
-              reducer: require('../modules/Example/reducer'),
-              sagas: require('../modules/Example/sagas')
-            }
-            }>
-              { ({Example, reducer, sagas}) => {
-                if (!Example) return <div />; //this line can protect
-                console.log('exampleRouterRender',reducer);
-                injectReducer('example', reducer);
-                injectSagas(sagas);
-                return Example && <Example {...routerProps} />
-              }
-              }
-            </CodeSplit>
-          }
-        />
-
-        <Match
-          pattern="/posts"
-          render={routerProps =>
-            <CodeSplit chunkName="posts" modules={
-            {
-              Posts: require('./Posts'),
-              reducer: require('../modules/posts/reducers')
-            }
-            }>
-              { ({Posts, reducer}) => {
-                if (!Posts) return <div />;
-                injectReducer('posts', reducer);
-                return Posts && <Posts {...routerProps} />
-              }
-              }
-
-            </CodeSplit>
-          }
-        />
-
+        {/*<Header />*/}
+        <CoreLayout>
+          <AppRouter store={this.store} />
+        </CoreLayout>
 
         {/*<Match*/}
-        {/*pattern="/user/:login"*/}
-        {/*render={routerProps =>*/}
-        {/*<CodeSplit chunkName="user" modules={{ GitHub: require('../modules/github/routerImport') }}>*/}
-        {/*{ ({ GitHub }) => {*/}
-        {/*console.log(GitHub);*/}
-        {/*const { User, reducers, sagas }= GitHub;*/}
-        {/*console.log('reducer:',reducers);*/}
-        {/*console.log('sagas:',sagas);*/}
-        {/*//console.log('all',alls);*/}
-        {/*console.log('User',User);*/}
-        {/*injectReducer('entities', reducers.entities);*/}
-        {/*injectReducer('pagination', reducers.pagination);*/}
-        {/*injectReducer('errorMessage', reducers.errorMessage);*/}
-        {/*injectReducer('router', reducers.router);*/}
-        {/*//injectReducer('user', reducer.default);*/}
-        {/*//injectSagas(sagas.default);*/}
-        {/*injectSagas(sagas);*/}
-        {/*// return <div /> ;*/}
-        {/*return User && <User {...routerProps} />*/}
-        {/*}*/}
-        {/*}*/}
-        {/*</CodeSplit>*/}
-        {/*}*/}
+          {/*exactly*/}
+          {/*pattern="/"*/}
+          {/*render={routerProps =>*/}
+            {/*<CodeSplit chunkName="home" modules={{Home: require('./Home')}}>*/}
+              {/*{ ({Home}) => Home && <Home {...routerProps} /> }*/}
+            {/*</CodeSplit>*/}
+          {/*}*/}
+        {/*/>*/}
+        {/*<Match*/}
+          {/*pattern="/about"*/}
+          {/*render={routerProps =>*/}
+            {/*<CodeSplit chunkName="about" modules={{About: require('./About')}}>*/}
+              {/*{ ({About}) => {*/}
+                {/*if (!About) return <div />;*/}
+                {/*return About && <About {...routerProps} /> }}*/}
+            {/*</CodeSplit>*/}
+          {/*}*/}
+        {/*/>*/}
+        {/*<Match*/}
+          {/*exactly*/}
+          {/*pattern="/example"*/}
+          {/*render={routerProps =>*/}
+            {/*<CodeSplit chunkName="example" modules={*/}
+            {/*{*/}
+              {/*Example: require('./Example'),*/}
+              {/*reducer: require('../modules/Example/reducer'),*/}
+              {/*sagas: require('../modules/Example/sagas')*/}
+            {/*}*/}
+            {/*}>*/}
+              {/*{ ({Example, reducer, sagas}) => {*/}
+                {/*if (!Example) return <div />; //this line can protect*/}
+                {/*console.log('exampleRouterRender',reducer);*/}
+                {/*injectReducer('example', reducer);*/}
+                {/*injectSagas(sagas);*/}
+                {/*return Example && <Example {...routerProps} />*/}
+              {/*}*/}
+              {/*}*/}
+            {/*</CodeSplit>*/}
+          {/*}*/}
         {/*/>*/}
 
-        {/*<MatchWithFade*/}
+        {/*<Match*/}
+          {/*pattern="/posts"*/}
+          {/*render={routerProps =>*/}
+            {/*<CodeSplit chunkName="posts" modules={*/}
+            {/*{*/}
+              {/*Posts: require('./Posts'),*/}
+              {/*reducer: require('../modules/posts/reducers')*/}
+            {/*}*/}
+            {/*}>*/}
+              {/*{ ({Posts, reducer}) => {*/}
+                {/*if (!Posts) return <div />;*/}
+                {/*injectReducer('posts', reducer);*/}
+                {/*return Posts && <Posts {...routerProps} />*/}
+              {/*}*/}
+              {/*}*/}
+
+            {/*</CodeSplit>*/}
+          {/*}*/}
+        {/*/>*/}
+
+        {/*<MatchWithUser*/}
           {/*exactly*/}
           {/*pattern="/user/:login"*/}
           {/*store={this.store}*/}
         {/*/>*/}
-        <MatchWithUser
-          exactly
-          pattern="/user/:login"
-          store={this.store}
-        />
-        <MatchWithTest
-          exactly
-          pattern="/test"
-          store={this.store}
-        />
-        <Miss component={Error404}/>
+        {/*<MatchWithTest*/}
+          {/*exactly*/}
+          {/*pattern="/test"*/}
+          {/*store={this.store}*/}
+        {/*/>*/}
+        {/*<Miss component={Error404}/>*/}
       </div>
     );
   }

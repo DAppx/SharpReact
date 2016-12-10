@@ -1,3 +1,3 @@
 /*       */
 
-export { default } from './Menu';
+export { default } from './antdMenu';
