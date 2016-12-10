@@ -1,6 +1,6 @@
 {
   "name": "SharpReact",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A starter kit giving you the minimum requirements for a production ready universal react application.",
   "main": "build/server/index.js",
   "engines": {
