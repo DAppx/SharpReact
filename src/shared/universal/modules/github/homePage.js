@@ -47,7 +47,7 @@ class UserPage extends Component {
 
     const { user, login } = this.props.userState;
     if (!user) {
-      return (<h1><i>111 Loading {login}’s profile...</i></h1>);
+      return (<h1><i> Loading {login}’s profile...</i></h1>);
     }
     const { starredRepos, starredRepoOwners, starredPagination } = this.props.userState;
     return (

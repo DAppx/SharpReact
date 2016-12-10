@@ -143,6 +143,7 @@ class App extends Component {
             }>
               { ({Example, reducer, sagas}) => {
                 if (!Example) return <div />; //this line can protect
+                console.log('exampleRouterRender',reducer);
                 injectReducer('example', reducer);
                 injectSagas(sagas);
                 return Example && <Example {...routerProps} />

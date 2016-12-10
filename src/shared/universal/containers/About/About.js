@@ -9,7 +9,7 @@ function About() {
     <div style={{ textAlign: 'center' }}>
       <Helmet title="About" />
 
-      甘霖医生荣誉出品  Produced with 1 cc❤️
+      甘霖医生荣誉出品1  Produced with 1 cc❤️
 
     </div>
   );

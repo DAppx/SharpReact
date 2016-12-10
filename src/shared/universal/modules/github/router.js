@@ -22,6 +22,7 @@ const userRouterRender = (store) => {
         { ({ modules }) => {
 
           if (!modules) return <div />;
+          console.log('userRouterRender',modules);
           injectReducer('entities', modules.reducers.entities);
           injectReducer('pagination', modules.reducers.pagination);
           injectReducer('errorMessage', modules.reducers.errorMessage);
