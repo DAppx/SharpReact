@@ -3,30 +3,33 @@
 ##步骤
 npm run module
 
-1.输入模块名称
-2.系统会在src/shared/universal/modules下生成模块需要的模板文件
+*Step 1.输入模块名称
+*Step 2.系统会在src/shared/universal/modules下生成模块需要的模板文件
    如：Test
-     actions.js
-     constaints.js
-     homePage.js
-     index.js
-     reducer.js
-     router.js
-     sagas.js
-     selectors.js
+1. `actions.js`
+2. `constaints.js`
+3. `homePage.js`
+4. `index.js`
+5. `reducer.js`
+6. `router.js`
+7. `sagas.js`
+8. `selectors.js`
+
 
 ###contaits.js
 定义模块中使用的常量
 命名约定全部大写表示，以模块名称开头
+
+```JavaScript
 export const TEST_CHANGE_USERNAME_FIELD = 'TEST_CHANGE_USERNAME_FIELD';
 export const TEST_USERNAME_FETCH_SUCCESS = 'TEST_USERNAME_FETCH_SUCCESS';
 export const TEST_USERNAME_FETCH_ERROR = 'TEST_USERNAME_FETCH_ERROR';
-
+```
 ###actions
 
 定义redux 中的Action
 命名约定按照模块名称开头-使用camelCase 格式编写
-
+```JavaScript
 export function testUserNameFetchSuccess(payload) {
   return {
     type: TEST_USERNAME_FETCH_SUCCESS,
@@ -46,12 +49,12 @@ export function testUserNameFetchError(error) {
     payload: error,
   };
 }
-
+```
 ###reducer
 
 使用immutable.js
 命名约定 模块名+Reducer 使用camelCase 格式编写
-
+```JavaScript
 const intialState = fromJS({
   queriedUsername: '',
   fetchErrors: false,
@@ -75,6 +78,7 @@ const intialState = fromJS({
 }
 
 export default testReducer
+```
 
 ###sagas
 
@@ -84,6 +88,7 @@ export default testReducer
 export 按照数据方式[],便于AsyncInjectSagas;
 一般只需要导出 root watcher 
 
+```JavaScript
 import {fork, call, put} from 'redux-saga/effects';
 import {takeLatest, delay} from 'redux-saga';
 import request from '../../utils/request';
@@ -122,7 +127,7 @@ function* testRootWatcher() {
 }
 
 export default [testRootWatcher];
-
+```
 ###router
 
 每个模块的React-Router V4 的 MATCH以及相应的RENDER function
@@ -130,6 +135,7 @@ export default [testRootWatcher];
 可以完成code splitting 功能 ， asyncInjectReducer asyncInjectSagas ; 
 将router 导入 App.js 或其他 Components 中
 
+```JavaScript
 const MatchWithTest = ({store, ...rest}) => {
   return (
     <Match {...rest} render={testRouterRender(store)}/>
@@ -157,11 +163,12 @@ const testRouterRender = (store) => {
 };
 
 export default MatchWithTest;
+```
 
 ###selectors
 
 根据业务要求，从Store中selector 数据
-
+```JavaScript
 import { createSelector } from 'reselect';
 /**
  * Direct selector to the test state domain
@@ -183,12 +190,14 @@ export default selectTest;
 export {
   selectTestDomain,
 };
+```
 
 ###index
 
 export 该模块中的相关信息，用于加载或引用；
 如router中   modules: require('../Test') 
 
+```JavaScript
 import * as actions from './actions';
 import reducer from './reducer';
 import sagas from './sagas';
@@ -202,4 +211,4 @@ export default {
     selectors,
     Page
     };
-
+```
