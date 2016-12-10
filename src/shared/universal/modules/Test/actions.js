@@ -5,11 +5,11 @@
  */
 
 import {
-  DEFAULT_ACTION,
+TEST_DEFAULT_ACTION,
 } from './constants';
 
 export function defaultAction() {
   return {
-    type: DEFAULT_ACTION,
+    type: TEST_DEFAULT_ACTION,
   };
 }

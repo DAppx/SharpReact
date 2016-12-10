@@ -6,14 +6,14 @@
 
 import { fromJS } from 'immutable';
 import {
-  DEFAULT_ACTION,
+TEST_DEFAULT_ACTION,
 } from './constants';
 
 const initialState = fromJS({});
 
 function testReducer(state = initialState, action) {
   switch (action.type) {
-    case DEFAULT_ACTION:
+    case TEST_DEFAULT_ACTION:
       return state;
     default:
       return state;

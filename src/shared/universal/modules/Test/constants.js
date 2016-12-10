@@ -4,4 +4,4 @@
  *
  */
 
-export const DEFAULT_ACTION = 'app/Test/DEFAULT_ACTION';
+export const TEST_DEFAULT_ACTION = 'app/Test/TEST_DEFAULT_ACTION';

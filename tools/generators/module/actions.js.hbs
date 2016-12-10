@@ -5,11 +5,11 @@
  */
 
 import {
-  DEFAULT_ACTION,
+{{ constantCase name }}_DEFAULT_ACTION,
 } from './constants';
 
 export function defaultAction() {
   return {
-    type: DEFAULT_ACTION,
+    type: {{ constantCase name }}_DEFAULT_ACTION,
   };
 }

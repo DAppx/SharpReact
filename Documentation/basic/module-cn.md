@@ -1,14 +1,18 @@
 # module 开发
 
-##步骤
-npm run module
+## 步骤
 
-*Step 1.*输入模块名称  如：test
-*Step 2.*系统会在src/shared/universal/modules下生成模块需要的模板文件
+命令行运行下命令；
+
+     `npm run module`
+
+*Step 1.*输入模块名称  如：module1
+
+*Step 2.*系统会在src/shared/universal/modules/module1下生成模块需要的模板文件
   
 1. `actions.js`
 
-2. `constaints.js`
+2. `constants.js`
 
 3. `homePage.js`
 
@@ -24,18 +28,25 @@ npm run module
 
 
 
-###contaits.js
+### constants
 
 定义模块中使用的常量
 
 命名约定全部大写表示，以模块名称开头
 
+
+
 ```JavaScript
 export const TEST_CHANGE_USERNAME_FIELD = 'TEST_CHANGE_USERNAME_FIELD';
 export const TEST_USERNAME_FETCH_SUCCESS = 'TEST_USERNAME_FETCH_SUCCESS';
 export const TEST_USERNAME_FETCH_ERROR = 'TEST_USERNAME_FETCH_ERROR';
+
+export const TEST_CHANGE_USERNAME_FIELD = 'MODULES/TEST/CHANGE_USERNAME_FIELD';
+export const TEST_USERNAME_FETCH_SUCCESS = 'MODULES/TEST/USERNAME_FETCH_SUCCESS';
+export const TEST_USERNAME_FETCH_ERROR = 'MODULES/TEST/USERNAME_FETCH_ERROR';
+
 ```
-###actions
+### actions
 
 定义redux 中的Action
 
@@ -62,7 +73,7 @@ export function testUserNameFetchError(error) {
   };
 }
 ```
-###reducer
+### reducer
 
 使用immutable.js
 
@@ -94,12 +105,12 @@ const intialState = fromJS({
 export default testReducer
 ```
 
-###sagas
+### sagas
 
 约定分为两个部分，
 上面部分为 WORKER SAGAS
 
-下面部分为 WATCHER SAGAS
+下面部分为 WATCHER SAGAS ，约定 watcher saga 命名中使用Watcher ，便于功能的区分
 
 export 按照数据方式[],便于AsyncInjectSagas;
 
@@ -146,7 +157,7 @@ function* testRootWatcher() {
 
 export default [testRootWatcher];
 ```
-###router
+### router
 
 每个模块的React-Router V4 的 MATCH以及相应的RENDER function
 
@@ -187,7 +198,7 @@ const testRouterRender = (store) => {
 export default MatchWithTest;
 ```
 
-###selectors
+### selectors
 
 根据业务要求，从Store中selector 数据
 
@@ -215,7 +226,7 @@ export {
 };
 ```
 
-###index
+### index
 
 export 该模块中的相关信息，用于加载或引用；
 

@@ -4,6 +4,11 @@ import request from '../../utils/request';
 import {CHANGE_USERNAME_FIELD} from './constants';
 import {usernameFetchSuccess, usernameFetchError} from './actions';
 
+/**
+ ****************************** WORKER SAGAS***********************************
+ **/
+
+
 function* asyncFetchDataExample({payload}) {
   if (payload.length >= 3) {
     yield call(delay, 1000); // We want to start fetching when idle for more than one second
